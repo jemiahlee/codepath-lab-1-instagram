@@ -50,6 +50,13 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let vc = segue.destinationViewController as! PhotoDetailsViewController
+        let indexPath = photoTableView.indexPathForCell(sender as! UITableViewCell)
+        let imageURL = self.instagramData["data"]![indexPath!.row]!["images"]!!["standard_resolution"]!!["url"] as! String
+        vc.photoUrl = NSURL(string: imageURL)!
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let data = self.instagramData {
             return data["data"]!.count
@@ -59,10 +66,16 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("com.codepath.photocell", forIndexPath: indexPath) as! PhotoTableViewCell
-        let imageURL = self.instagramData["data"]![indexPath.row]!["images"]!!["standard_resolution"]!!["url"] as! String
+        let imageURL = self.instagramData["data"]![indexPath.row]!["images"]!!["thumbnail"]!!["url"] as! String
         cell.photoImageView.setImageWithURL(NSURL(string: imageURL)!)
         return cell
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("Here")
+        tableView.deselectRowAtIndexPath(indexPath, animated:true)
+    }
+    
 
 }
 

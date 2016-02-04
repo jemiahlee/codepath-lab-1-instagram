@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D1662C71C6306C50024C873 /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1662C61C6306C50024C873 /* PhotoDetailsViewController.swift */; };
 		45275B791C62FE340059E34F /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45275B781C62FE340059E34F /* PhotoTableViewCell.swift */; };
 		45A128A31C62F866008372D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A128A21C62F866008372D7 /* AppDelegate.swift */; };
 		45A128A51C62F866008372D7 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A128A41C62F866008372D7 /* PhotosViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D1662C61C6306C50024C873 /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
 		45275B781C62FE340059E34F /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
 		45A1289F1C62F866008372D7 /* InstagramClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45A128A21C62F866008372D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,9 +75,10 @@
 			isa = PBXGroup;
 			children = (
 				45A128A21C62F866008372D7 /* AppDelegate.swift */,
-				45A128A41C62F866008372D7 /* PhotosViewController.swift */,
 				45A128A61C62F866008372D7 /* Main.storyboard */,
+				45A128A41C62F866008372D7 /* PhotosViewController.swift */,
 				45275B781C62FE340059E34F /* PhotoTableViewCell.swift */,
+				2D1662C61C6306C50024C873 /* PhotoDetailsViewController.swift */,
 				45A128A91C62F866008372D7 /* Assets.xcassets */,
 				45A128AB1C62F866008372D7 /* LaunchScreen.storyboard */,
 				45A128AE1C62F866008372D7 /* Info.plist */,
@@ -213,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D1662C71C6306C50024C873 /* PhotoDetailsViewController.swift in Sources */,
 				45A128A51C62F866008372D7 /* PhotosViewController.swift in Sources */,
 				45A128A31C62F866008372D7 /* AppDelegate.swift in Sources */,
 				45275B791C62FE340059E34F /* PhotoTableViewCell.swift in Sources */,
