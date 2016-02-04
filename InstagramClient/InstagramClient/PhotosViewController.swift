@@ -12,17 +12,24 @@ import AFNetworking
 class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var instagramData: NSDictionary!
+    let refreshControl = UIRefreshControl()
     
     @IBOutlet weak var photoTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        refreshControl.addTarget(self, action: "loadData:", forControlEvents: UIControlEvents.ValueChanged)
+        photoTableView.insertSubview(refreshControl, atIndex: 0)
+
         photoTableView.dataSource = self
         photoTableView.delegate = self
         
         photoTableView.rowHeight = 320;
-        
+        loadData(self.refreshControl)
+    }
+    
+    func loadData(refreshControl: UIRefreshControl) {
         let clientId = "e05c462ebd86446ea48a5af73769b602"
         let url = NSURL(string:"https://api.instagram.com/v1/media/popular?client_id=\(clientId)")
         let request = NSURLRequest(URL: url!)
@@ -39,6 +46,7 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
                         data, options:[]) as? NSDictionary {
                             self.instagramData = responseDictionary
                             self.photoTableView.reloadData()
+                            self.refreshControl.endRefreshing()
                     }
                 }
         });
